@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: blue;
+        }
+        .container {
+            max-width: 100%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: black;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            font-weight: 900;
+            font-size: 40px;
+            color: #897986;
+            text-align: center;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration</h2>
+        <form id="form">
+            <input type="text" id="firstName" name="firstName" placeholder="First Name" required aria-label="First Name">
+            <input type="text" id="lastName" name="lastName" placeholder="Last Name" required aria-label="Last Name">
+            <input type="text" id="username" name="username" placeholder="Username" required aria-label="Username">
+            <input type="email" id="email" name="email" placeholder="Email" required aria-label="Email">
+            <input type="password" id="password" name="password" placeholder="Password" required aria-label="Password">
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById("form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            // Add your form submission logic here
+            // For demonstration purpose, you can log the form data
+            var formData = new FormData(event.target);
+            for (var pair of formData.entries()) {
+                console.log(pair[0] + ': ' + pair[1]);
+            }
+        });
+    </script>
+</body>
+</html>
